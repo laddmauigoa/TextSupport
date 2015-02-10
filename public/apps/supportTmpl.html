@@ -1,0 +1,19 @@
+{{test}} <br>
+
+<h1>Text Support </h1>
+
+<h3> Tickets </h3>
+
+<div>
+	<div ng-repeat='text in texts'>
+		<div ng-repeat='(key, value) in text'> 
+		{{value.from}}<br> 
+		{{value.date_created}}<br>
+		{{value.body}}
+			<!-- <div ng-repeat='(key, val) in value'>
+				{{key}}: {{val}}
+			</div> -->
+		</div>
+	</div>
+
+</div>
