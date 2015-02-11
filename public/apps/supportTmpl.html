@@ -5,15 +5,39 @@
 <h3> Tickets </h3>
 
 <div>
-	<div ng-repeat='text in texts'>
+
+	<div ng-repeat='(key, value) in texts'> 
+	{{key}}
+		<div ng-repeat='text in value'> 
+		{{text.body}}<br> 
+		{{text.date_created}}<br>
+	
+		</div>
+			
+			<form ng-submit="postReply(newMessageText, key)">
+      		<input ng-model="newMessageText" />
+      		<button type="submit">send reply</button>
+    		</form>
+
+	</div>
+
+
+
+	<!-- <div ng-repeat='text in texts'> 
+
 		<div ng-repeat='(key, value) in text'> 
 		{{value.from}}<br> 
 		{{value.date_created}}<br>
 		{{value.body}}
-			<!-- <div ng-repeat='(key, val) in value'>
-				{{key}}: {{val}}
-			</div> -->
+			
+			
+			<form ng-submit="postReply(newMessageText, value.from)">
+      		<input ng-model="newMessageText" />
+      		<button type="submit">send reply</button>
+    		</form>
 		</div>
-	</div>
+			
+			
 
+	</div> -->
 </div>
